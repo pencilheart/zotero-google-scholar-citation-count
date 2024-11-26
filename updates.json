@@ -5,7 +5,7 @@
         {
           "version": "4.1.1",
           "update_link": "https://github.com/justinribeiro/zotero-google-scholar-citation-count/releases/download/v4.1.1/zotero-google-scholar-citation-count-4.1.1.xpi",
-          "update_hash": "sha256:3e9e3e20b490c084b712ead36f37c1daf06b2f7c870f8e350c251d3d4ac5269b",
+          "update_hash": "sha256:cd8007d1726a02b88322bb420871bea066337a87a0077063959b16c8fd41395f",
           "applications": {
             "zotero": {
               "strict_min_version": "6.999",

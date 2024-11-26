@@ -642,15 +642,17 @@ $__gscc.app = {
     );
 
     let titleSearchString;
+    let rawTitle = item.getField('title').replace(/<sub>/g, '').replace(/<\/sub>/g, ''); 
+
     if (useSearchTitleFuzzyMatch) {
       $__gscc.debugger.info(
         `Search Param: Using Fuzzy Title Match per Preferences`,
       );
-      titleSearchString = `${item.getField('title')}`;
+      titleSearchString = `${rawTitle}`;
     } else {
       // this is a dead match; kinda risky for hand-entered data but match is
       // good on Zotero grabs
-      titleSearchString = `"${item.getField('title')}"`;
+      titleSearchString = `"${rawTitle}"`;
     }
 
     let paramAuthors = '';
