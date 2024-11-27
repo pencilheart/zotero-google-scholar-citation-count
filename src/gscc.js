@@ -208,13 +208,13 @@ $__gscc.app = {
    * API endpoint for Google Scholar
    * @private
    */
-  __apiEndpoint: 'https://scholar.google.com/',
+  __apiEndpoint: 'https://scholar.lanfanshu.cn/',
   /**
    * Default String search in Google Scholar,
    * will override based on locale
    * @private
    */
-  __citedByPrefix: 'Cited by',
+  __citedByPrefix: '被引用次数：',
   /**
    * My own marker for init; not for general use
    * @private
@@ -226,8 +226,8 @@ $__gscc.app = {
    */
   __preferenceDefaults: {
     useRandomWait: true,
-    randomWaitMinMs: 1000,
-    randomWaitMaxMs: 5000,
+    randomWaitMinMs: 0,
+    randomWaitMaxMs: 0,
     useFuzzyMatch: false,
     useSearchTitleFuzzyMatch: false,
     useSearchAuthorsMatch: true,
