@@ -183,6 +183,15 @@ $__gscc.util = {
   },
 };
 
+const mirrorcode = Zotero.Prefs.get('extensions.zotero.gscc.mirrorurl');
+let mirrorurl_1;
+
+if (mirrorcode == 1) {
+  mirrorurl_1 = 'https://scholar.lanfanshu.cn/';
+} else if (mirrorcode == 2) {
+  mirrorurl_1 = 'https://xs.essclick.com/';
+}
+
 $__gscc.app = {
   /**
    * The overall length of the citation count
@@ -208,7 +217,8 @@ $__gscc.app = {
    * API endpoint for Google Scholar
    * @private
    */
-  __apiEndpoint: 'https://scholar.lanfanshu.cn/',
+  // __apiEndpoint: 'https://scholar.lanfanshu.cn/',
+  __apiEndpoint: mirrorurl_1,
   /**
    * Default String search in Google Scholar,
    * will override based on locale
@@ -232,6 +242,7 @@ $__gscc.app = {
     useSearchTitleFuzzyMatch: false,
     useSearchAuthorsMatch: true,
     useDateRangeMatch: false,
+    mirrorurl:'https://scholar.lanfanshu.cn/',
   },
   /**
    * Initialize our world.
