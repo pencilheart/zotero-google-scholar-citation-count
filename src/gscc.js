@@ -432,11 +432,11 @@ $__gscc.app = {
       queueMinWaitMs = Zotero.Prefs.get(
         'extensions.zotero.gscc.randomWaitMinMs',
         $__gscc.app.__preferenceDefaults.randomWaitMinMs,
-      );
+      )*1000;
       queueMaxWaitMs = Zotero.Prefs.get(
         'extensions.zotero.gscc.randomWaitMaxMs',
         $__gscc.app.__preferenceDefaults.randomWaitMaxMs,
-      );
+      )*1000;
 
       $__gscc.debugger.info(`Min: ${queueMinWaitMs} Max: ${queueMaxWaitMs}`);
     }
@@ -490,7 +490,7 @@ $__gscc.app = {
         const processedwaittime = Zotero.Prefs.get(
           'extensions.zotero.gscc.processedwaittime',
           $__gscc.app.__preferenceDefaults.processedwaittime,
-        );
+        )*60000;
         if (processedCount % processedCountLimit === 0) {
           $__gscc.debugger.info(`Processed ${processedCount} items, pausing for ${processedwaittime/60000} minutes.`);
           await $__gscc.util.sleep(processedwaittime);
