@@ -229,6 +229,7 @@ $__gscc.app = {
     randomWaitMinMs: 1000,
     randomWaitMaxMs: 5000,
     processedCountLimit: 15,
+    processedwaittime: 900000,
     useFuzzyMatch: false,
     useSearchTitleFuzzyMatch: false,
     useSearchAuthorsMatch: true,
@@ -485,10 +486,14 @@ $__gscc.app = {
         // Increment the counter after processing an item
         processedCount++;
 
-        // Pause for 30 minutes after processing the specified number of items
+        // Pause for processedwaittime minutes after processing the specified number of items
+        const processedwaittime = Zotero.Prefs.get(
+          'extensions.zotero.gscc.processedwaittime',
+          $__gscc.app.__preferenceDefaults.processedwaittime,
+        );
         if (processedCount % processedCountLimit === 0) {
-          $__gscc.debugger.info(`Processed ${processedCount} items, pausing for 30 minutes.`);
-          await $__gscc.util.sleep(1800000); // 30 minutes in milliseconds
+          $__gscc.debugger.info(`Processed ${processedCount} items, pausing for ${processedwaittime/60000} minutes.`);
+          await $__gscc.util.sleep(processedwaittime);
         }
       }
     }

@@ -3,6 +3,7 @@ preferences-gscc-random-wait-timing-explain = To attempt to not trigger the IP s
 preferences-gscc-randomWaitMinMs = Minimum Request Wait (milliseconds)
 preferences-gscc-randomWaitMaxMs = Maximum Request Wait (milliseconds)
 preferences-gscc-processedCountLimit = Number of intermittent items
+preferences-gscc-processedwaittime =  Intermittent items Wait(milliseconds)
 preferences-gscc-search-params = Custom Search Parameters
 preferences-gscc-search-params-explain = Depending on the types of papers you import, sometimes finding matches can be hard. The latest v4.1 of GSCC allows changing the search behavior through flags to help when you need it. In most cases, you shouldn't need the flags below, but if you're having issues, different combinations in different global regions can sometimes help.
 preferences-gscc-useSearchTitleFuzzyMatch= Use Fuzzy Title Match
