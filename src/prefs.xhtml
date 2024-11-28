@@ -3,28 +3,24 @@
 </linkset>
 <vbox>
   <groupbox aria-labelledby="preferences-gscc-enable-random-wait-timing">
-    
-    <!-- <label>
-      <html:h3
-        id="extensions-zotero-gscc-mirrorurl"
-        data-l10n-id="extensions-zotero-gscc-mirrorurl"
-      />
-    </label>
-    <html:input
-        type="text"
-        preference="extensions.zotero.gscc.mirrorurl"
-        style="width: 80px; text-align: center;" /> -->
 
-    <menulist id="extensions-zotero-gscc-mirrorurl" preference="extensions.zotero.gscc.mirrorurl" native="true">
-      <menupopup>
-        <menuitem id="extensions-zotero-gscc-mirrorurl-1"  data-l10n-id="mirror1" value="https://scholar.lanfanshu.cn/"></menuitem>
-        <menuitem data-l10n-id="mirror2" value="https://scholar.google.com/"></menuitem>
-        <menuitem data-l10n-id="mirror3" value="https://www.dotaindex.com/"></menuitem>
-        <menuitem data-l10n-id="mirror4" value="https://xs.vygc.top/"></menuitem>
-        <menuitem data-l10n-id="mirror5" value="https://xs.gupiaoq.com/"></menuitem>
-        <menuitem data-l10n-id="mirror6" value="https://xs.typicalgame.com/"></menuitem>
-      </menupopup>
-    </menulist> 
+    <vbox>
+      <!-- 下拉菜单 -->
+      <menulist id="extensions-zotero-gscc-mirrorurl" preference="extensions.zotero.gscc.mirrorurl" style="min-width: 300px;" native="true">
+        <menupopup>
+          <menuitem id="extensions-zotero-gscc-mirrorurl-1" data-l10n-id="mirror1" value="https://scholar.lanfanshu.cn/"></menuitem>
+          <menuitem data-l10n-id="mirror2" value="https://xueshu.lanfanshu.cn/"></menuitem>
+          <menuitem data-l10n-id="mirror3" value="https://scholar.google.com/"></menuitem>
+          <!-- <menuitem data-l10n-id="mirror11" value="https://www.dotaindex.com/"></menuitem> -->
+          <!-- <menuitem data-l10n-id="mirror12" value="https://xs.vygc.top/"></menuitem> -->
+          <!-- <menuitem data-l10n-id="mirror13" value="https://xs.gupiaoq.com/"></menuitem> -->
+          <!-- <menuitem data-l10n-id="mirror14" value="https://xs.typicalgame.com/"></menuitem> -->
+        </menupopup>
+      </menulist>
+      <!-- 输入框 -->
+      <html:input type="text" preference="extensions.zotero.gscc.mirrorurl" style="width: 300px; text-align: left;"  placeholder="自定义URL"/>
+    </vbox>
+  
 
     <label>
       <html:h2
