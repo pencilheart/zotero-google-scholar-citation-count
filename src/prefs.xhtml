@@ -4,18 +4,20 @@
 
 <groupbox aria-labelledby="preferences-gscc-mirror-title">
   <html:b id="preferences-gscc-mirror-title" data-l10n-id="preferences-gscc-mirror-title" style="margin-top: 2em;"/>
-  <menulist id="extensions-zotero-gscc-mirrorurl" preference="extensions.zotero.gscc.mirrorurl" style="min-width: 300px;" native="true">
-    <menupopup>
-      <menuitem id="extensions-zotero-gscc-mirrorurl-1" data-l10n-id="mirror1" value="https://scholar.lanfanshu.cn/"></menuitem>
-      <menuitem data-l10n-id="mirror2" value="https://xueshu.lanfanshu.cn/"></menuitem>
-      <menuitem data-l10n-id="mirror3" value="https://scholar.google.com/"></menuitem>
-      <!-- <menuitem data-l10n-id="mirror11" value="https://www.dotaindex.com/"></menuitem> -->
-      <!-- <menuitem data-l10n-id="mirror12" value="https://xs.vygc.top/"></menuitem> -->
-      <!-- <menuitem data-l10n-id="mirror13" value="https://xs.gupiaoq.com/"></menuitem> -->
-      <!-- <menuitem data-l10n-id="mirror14" value="https://xs.typicalgame.com/"></menuitem> -->
-    </menupopup>
-  </menulist>
-  <html:input type="text" preference="extensions.zotero.gscc.mirrorurl" style="width: 300px; text-align: left;"  placeholder="Custom URL"/>
+  <hbox style="display: flex; width: 100%;">
+    <menulist preference="extensions.zotero.gscc.mirrorurl" style="flex: 4; min-width: 0; text-align: left;" native="true">
+        <menupopup>
+            <menuitem label="https://scholar.lanfanshu.cn/✅" value="https://scholar.lanfanshu.cn/"/>
+            <menuitem label="https://xueshu.lanfanshu.cn/✅" value="https://xueshu.lanfanshu.cn/"/>
+            <menuitem label="https://scholar.google.com/✅" value="https://scholar.google.com/"/>
+            <!-- <menuitem label="https://www.dotaindex.com/❌" value="https://www.dotaindex.com/"/> -->
+            <!-- <menuitem label="https://xs.vygc.top/❌" value="https://xs.vygc.top/"/> -->
+            <!-- <menuitem label="https://xs.gupiaoq.com/❌" value="https://xs.gupiaoq.com/"/> -->
+            <!-- <menuitem label="https://xs.typicalgame.com/❌" value="https://xs.typicalgame.com/"/> -->
+        </menupopup>
+    </menulist>
+    <html:input type="text" preference="extensions.zotero.gscc.mirrorurl" style="flex: 6; width: 100%; text-align: left;" placeholder="Custom URL"/>
+  </hbox>
 </groupbox>
 
 <groupbox aria-labelledby="preferences-gscc-search-params">

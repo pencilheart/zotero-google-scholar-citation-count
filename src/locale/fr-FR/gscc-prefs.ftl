@@ -1,11 +1,4 @@
 preferences-gscc-mirror-title=Miroir URL
-mirror1=https://scholar.lanfanshu.cn/✅
-mirror2=https://xueshu.lanfanshu.cn/✅
-mirror3=https://scholar.google.com/✅
-# mirror11=https://www.dotaindex.com/❌
-# mirror12=https://xs.vygc.top/❌
-# mirror13=https://xs.gupiaoq.com/❌
-# mirror14=https://xs.typicalgame.com/❌
 preferences-gscc-search-params = Paramètres de recherche personnalisés
 preferences-gscc-search-params-explain = En fonction des types de documents que vous importez, il peut parfois être difficile de trouver des correspondances. La dernière version v4.1 de GSCC permet de modifier le comportement de recherche via des options pour vous aider en cas de besoin. Dans la plupart des cas, vous n'aurez pas besoin de ces options, mais si vous rencontrez des problèmes, différentes combinaisons dans différentes régions peuvent parfois aider.
 preferences-gscc-useSearchTitleFuzzyMatch = Utiliser la correspondance floue des titres

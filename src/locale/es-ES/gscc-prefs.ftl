@@ -1,11 +1,4 @@
 preferences-gscc-mirror-title=Espejo URL
-mirror1=https://scholar.lanfanshu.cn/✅
-mirror2=https://xueshu.lanfanshu.cn/✅
-mirror3=https://scholar.google.com/✅
-# mirror11=https://www.dotaindex.com/❌
-# mirror12=https://xs.vygc.top/❌
-# mirror13=https://xs.gupiaoq.com/❌
-# mirror14=https://xs.typicalgame.com/❌
 preferences-gscc-search-params = Parámetros de búsqueda personalizados
 preferences-gscc-search-params-explain = Dependiendo de los tipos de documentos que importe, a veces puede ser difícil encontrar coincidencias. La última versión v4.1 de GSCC permite cambiar el comportamiento de búsqueda mediante opciones para ayudarle cuando lo necesite. En la mayoría de los casos, no necesitará las opciones a continuación, pero si tiene problemas, diferentes combinaciones en distintas regiones globales pueden ayudar.
 preferences-gscc-useSearchTitleFuzzyMatch = Usar coincidencia de título difusa

@@ -1,11 +1,4 @@
 preferences-gscc-mirror-title=镜像网址
-mirror1=https://scholar.lanfanshu.cn/✅
-mirror2=https://xueshu.lanfanshu.cn/✅
-mirror3=https://scholar.google.com/✅
-# mirror11=https://www.dotaindex.com/❌
-# mirror12=https://xs.vygc.top/❌
-# mirror13=https://xs.gupiaoq.com/❌
-# mirror14=https://xs.typicalgame.com/❌
 preferences-gscc-search-params = 自定义搜索参数
 preferences-gscc-search-params-explain = 根据您导入的论文类型，有时找到匹配项会很困难。最新的 GSCC v4.1 允许通过标志改变搜索行为，以便在需要时提供帮助。在大多数情况下，您不需要使用以下标志，但如果遇到问题，不同全球区域的不同组合有时会有所帮助。
 preferences-gscc-useSearchTitleFuzzyMatch = 使用模糊标题匹配

@@ -1,11 +1,4 @@
 preferences-gscc-mirror-title=ミラーURL
-mirror1=https://scholar.lanfanshu.cn/✅
-mirror2=https://xueshu.lanfanshu.cn/✅
-mirror3=https://scholar.google.com/✅
-# mirror11=https://www.dotaindex.com/❌
-# mirror12=https://xs.vygc.top/❌
-# mirror13=https://xs.gupiaoq.com/❌
-# mirror14=https://xs.typicalgame.com/❌
 preferences-gscc-search-params = カスタム検索パラメータ
 preferences-gscc-search-params-explain = インポートする論文の種類によっては、マッチを見つけるのが難しい場合があります。最新の GSCC v4.1 では、必要に応じてフラグを使用して検索動作を変更することができます。ほとんどの場合、以下のフラグは必要ありませんが、問題が発生した場合、異なる地域で異なる組み合わせが役立つことがあります。
 preferences-gscc-useSearchTitleFuzzyMatch = タイトルのファジーマッチを使用

@@ -1,11 +1,4 @@
 preferences-gscc-mirror-title=Mirror URL
-mirror1=https://scholar.lanfanshu.cn/✅
-mirror2=https://xueshu.lanfanshu.cn/✅
-mirror3=https://scholar.google.com/✅
-# mirror11=https://www.dotaindex.com/❌
-# mirror12=https://xs.vygc.top/❌
-# mirror13=https://xs.gupiaoq.com/❌
-# mirror14=https://xs.typicalgame.com/❌
 preferences-gscc-search-params = Custom Search Parameters
 preferences-gscc-search-params-explain = Depending on the types of papers you import, sometimes finding matches can be hard. The latest v4.1 of GSCC allows changing the search behavior through flags to help when you need it. In most cases, you shouldn't need the flags below, but if you're having issues, different combinations in different global regions can sometimes help.
 preferences-gscc-useSearchTitleFuzzyMatch= Use Fuzzy Title Match
