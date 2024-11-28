@@ -3,6 +3,29 @@
 </linkset>
 <vbox>
   <groupbox aria-labelledby="preferences-gscc-enable-random-wait-timing">
+    
+    <!-- <label>
+      <html:h3
+        id="extensions-zotero-gscc-mirrorurl"
+        data-l10n-id="extensions-zotero-gscc-mirrorurl"
+      />
+    </label>
+    <html:input
+        type="text"
+        preference="extensions.zotero.gscc.mirrorurl"
+        style="width: 80px; text-align: center;" /> -->
+
+    <menulist id="extensions-zotero-gscc-mirrorurl" preference="extensions.zotero.gscc.mirrorurl" native="true">
+      <menupopup>
+        <menuitem id="extensions-zotero-gscc-mirrorurl-1"  data-l10n-id="mirror1" value="https://scholar.lanfanshu.cn/"></menuitem>
+        <menuitem data-l10n-id="mirror2" value="https://scholar.google.com/"></menuitem>
+        <menuitem data-l10n-id="mirror3" value="https://www.dotaindex.com/"></menuitem>
+        <menuitem data-l10n-id="mirror4" value="https://xs.vygc.top/"></menuitem>
+        <menuitem data-l10n-id="mirror5" value="https://xs.gupiaoq.com/"></menuitem>
+        <menuitem data-l10n-id="mirror6" value="https://xs.typicalgame.com/"></menuitem>
+      </menupopup>
+    </menulist> 
+
     <label>
       <html:h2
         id="preferences-gscc-enable-random-wait-timing"
@@ -44,18 +67,7 @@
         style="width: 80px; text-align: center;" />
     </hbox>
 
-    <menulist id="extensions-zotero-gscc-mirrorurl" preference="extensions.zotero.gscc.mirrorurl" native="true">
-      <menupopup>
-        <menuitem
-          id="extensions-zotero-gscc-mirrorurl-1"
-          data-l10n-id="mirror1"
-          value="1"
-        >
-        </menuitem>
-        <menuitem data-l10n-id="mirror2" value="2">
-        </menuitem>
-      </menupopup>
-    </menulist> 
+    
 
   </groupbox>
   <groupbox aria-labelledby="preferences-gscc-search-params">

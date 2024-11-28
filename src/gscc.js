@@ -183,14 +183,7 @@ $__gscc.util = {
   },
 };
 
-const mirrorcode = Zotero.Prefs.get('extensions.zotero.gscc.mirrorurl');
-let mirrorurl_1;
-
-if (mirrorcode == 1) {
-  mirrorurl_1 = 'https://scholar.lanfanshu.cn/';
-} else if (mirrorcode == 2) {
-  mirrorurl_1 = 'https://xs.essclick.com/';
-}
+// const scholarurl = Zotero.Prefs.get('extensions.zotero.gscc.mirrorurl');
 
 $__gscc.app = {
   /**
@@ -215,10 +208,10 @@ $__gscc.app = {
   __noData: 'NoCitationData',
   /**
    * API endpoint for Google Scholar
-   * @private
+  
    */
   // __apiEndpoint: 'https://scholar.lanfanshu.cn/',
-  __apiEndpoint: mirrorurl_1,
+  // __apiEndpoint: Zotero.Prefs.get('extensions.zotero.gscc.mirrorurl'),
   /**
    * Default String search in Google Scholar,
    * will override based on locale
@@ -674,7 +667,18 @@ $__gscc.app = {
       }
     }
 
-    const targetUrl = `${this.__apiEndpoint}scholar?hl=en&q=${titleSearchString}&as_epq=&as_occt=title&num=1${paramAuthors}${paramYearRange}`;
+    const scholarurl = Zotero.Prefs.get(
+      'extensions.zotero.gscc.mirrorurl',
+      $__gscc.app.__preferenceDefaults.mirrorurl,
+    );
+    // const scholarurl = Zotero.Prefs.get(
+    //   'extensions.zotero.gscc.mirrorurl',
+    // );
+    $__gscc.debugger.info(`scholarurl: ${scholarurl}`);
+    // const targetUrl = `${scholarurl}scholar?hl=en&q=${titleSearchString}&as_epq=&as_occt=title&num=1${paramAuthors}${paramYearRange}`;
+    const targetUrl = `${scholarurl}scholar?hl=zh&q=${titleSearchString}&as_epq=&as_occt=title&num=1${paramAuthors}${paramYearRange}`;
+    
+    
     $__gscc.debugger.info(`Search Endpoint Ready: ${targetUrl}`);
 
     return encodeURI(targetUrl);
