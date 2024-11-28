@@ -109,15 +109,6 @@ $__gscc.util = {
     });
   },
   /**
-   * Get a random number
-   * @param {number} min
-   * @param {number} max
-   * @return {number}
-   */
-  randomInteger: function (min, max) {
-    return Math.floor(Math.random() * (max - min + 1)) + min;
-  },
-  /**
    * Checks to validate whether the source code has a recaptcha within it
    * @param {string} source source code to parse and search for recaptcha
    * include
@@ -220,9 +211,6 @@ $__gscc.app = {
    * @private
    */
   __preferenceDefaults: {
-    useRandomWait: true,
-    randomWaitMinMs: 0,
-    randomWaitMaxMs: 0,
     useFuzzyMatch: false,
     useSearchTitleFuzzyMatch: false,
     useSearchAuthorsMatch: true,
@@ -413,29 +401,6 @@ $__gscc.app = {
    * @param {ZoteroGenericItem[]} items
    */
   processItems: async function (items) {
-    const useQueue = Zotero.Prefs.get(
-      'extensions.zotero.gscc.useRandomWait',
-      $__gscc.app.__preferenceDefaults.useRandomWait,
-    );
-
-    let queueMinWaitMs;
-    let queueMaxWaitMs;
-
-    $__gscc.debugger.info(`Use Queue: ${useQueue}`);
-
-    if (useQueue) {
-      queueMinWaitMs = Zotero.Prefs.get(
-        'extensions.zotero.gscc.randomWaitMinMs',
-        $__gscc.app.__preferenceDefaults.randomWaitMinMs,
-      )*1000;
-      queueMaxWaitMs = Zotero.Prefs.get(
-        'extensions.zotero.gscc.randomWaitMaxMs',
-        $__gscc.app.__preferenceDefaults.randomWaitMaxMs,
-      )*1000;
-
-      $__gscc.debugger.info(`Min: ${queueMinWaitMs} Max: ${queueMaxWaitMs}`);
-    }
-
     /**
      * @param {number} index
      * @param {ZoteroGenericItem} item
@@ -448,18 +413,6 @@ $__gscc.app = {
           )}': empty title or missing creator information'`,
         );
       } else {
-        // check the prefs in case user override, don't use it on the first item
-        // either way
-        if (useQueue && index > 0) {
-          const queueTime = $__gscc.util.randomInteger(
-            queueMinWaitMs,
-            queueMaxWaitMs,
-          );
-
-          $__gscc.debugger.info(`queued for ${queueTime} ms later.`);
-          await $__gscc.util.sleep(queueTime);
-        }
-
         const response = await this.retrieveCitationData(item);
         await this.processCitationResponse(
           response.status,
