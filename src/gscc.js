@@ -183,8 +183,6 @@ $__gscc.util = {
   },
 };
 
-// const scholarurl = Zotero.Prefs.get('extensions.zotero.gscc.mirrorurl');
-
 $__gscc.app = {
   /**
    * The overall length of the citation count
@@ -206,12 +204,6 @@ $__gscc.app = {
    * @private
    */
   __noData: 'NoCitationData',
-  /**
-   * API endpoint for Google Scholar
-  
-   */
-  // __apiEndpoint: 'https://scholar.lanfanshu.cn/',
-  // __apiEndpoint: Zotero.Prefs.get('extensions.zotero.gscc.mirrorurl'),
   /**
    * Default String search in Google Scholar,
    * will override based on locale
@@ -629,7 +621,6 @@ $__gscc.app = {
 
     let titleSearchString;
     let rawTitle = item.getField('title').replace(/<sub>/g, '').replace(/<\/sub>/g, ''); 
-
     if (useSearchTitleFuzzyMatch) {
       $__gscc.debugger.info(
         `Search Param: Using Fuzzy Title Match per Preferences`,
@@ -672,9 +663,6 @@ $__gscc.app = {
       'extensions.zotero.gscc.mirrorurl',
       $__gscc.app.__preferenceDefaults.mirrorurl,
     );
-    // const scholarurl = Zotero.Prefs.get(
-    //   'extensions.zotero.gscc.mirrorurl',
-    // );
     $__gscc.debugger.info(`scholarurl: ${scholarurl}`);
     // const targetUrl = `${scholarurl}scholar?hl=en&q=${titleSearchString}&as_epq=&as_occt=title&num=1${paramAuthors}${paramYearRange}`;
     const targetUrl = `${scholarurl}scholar?hl=zh&q=${titleSearchString}&as_epq=&as_occt=title&num=1${paramAuthors}${paramYearRange}`;

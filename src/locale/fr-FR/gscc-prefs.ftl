@@ -1,3 +1,11 @@
+preferences-gscc-mirror-title=Miroir URL
+mirror1=https://scholar.lanfanshu.cn/✅
+mirror2=https://xueshu.lanfanshu.cn/✅
+mirror3=https://scholar.google.com/✅
+# mirror11=https://www.dotaindex.com/❌
+# mirror12=https://xs.vygc.top/❌
+# mirror13=https://xs.gupiaoq.com/❌
+# mirror14=https://xs.typicalgame.com/❌
 preferences-gscc-enable-random-wait-timing = Définir des intervalles d'attente aléatoires pour les requêtes Google Scholar
 preferences-gscc-random-wait-timing-explain = Pour tenter de ne pas déclencher l'interdiction IP imposée par Google Scholar, GSCC utilise un intervalle aléatoire pour chaque requête HTTP. Vous pouvez modifier la fenêtre en révisant les millisecondes ci-dessous.
 preferences-gscc-randomWaitMinMs = Temps d'attente minimum (secondes)

@@ -1,3 +1,11 @@
+preferences-gscc-mirror-title=ミラーURL
+mirror1=https://scholar.lanfanshu.cn/✅
+mirror2=https://xueshu.lanfanshu.cn/✅
+mirror3=https://scholar.google.com/✅
+# mirror11=https://www.dotaindex.com/❌
+# mirror12=https://xs.vygc.top/❌
+# mirror13=https://xs.gupiaoq.com/❌
+# mirror14=https://xs.typicalgame.com/❌
 preferences-gscc-enable-random-wait-timing = Google Scholar リクエストのランダム待機間隔を設定
 preferences-gscc-random-wait-timing-explain = Google Scholar が実施する IP ブロックを回避するため、GSCC は各 HTTP リクエストにランダムな間隔を使用します。以下のミリ秒単位の設定を変更してウィンドウを調整できます。
 preferences-gscc-randomWaitMinMs = 最小リクエスト待機時間（秒）
