@@ -226,11 +226,23 @@ $__gscc.app = {
     this.id = id;
     this.version = version;
     this.rootURI = rootURI;
-
+  
     // sanity
     $__gscc.app.__initialized = true;
-
+  
     $__gscc.debugger.info(`Init() Complete! ${this.rootURI}`);
+  
+    // Add event listener for new items
+    Zotero.Notifier.registerObserver($__gscc.app.notifierCallback, ['item']);
+  },
+  
+  notifierCallback: {
+    notify: async function(event, type, ids, extraData) {
+      if (event === 'add' && type === 'item') {
+        const newItems = await Zotero.Items.getAsync(ids);
+        await $__gscc.app.updateItemMenuEntries(newItems);
+      }
+    }
   },
 
   main: async function () {
@@ -369,10 +381,11 @@ $__gscc.app = {
     window.alert(unSupportedEntryTypeString);
     return;
   },
-  updateItemMenuEntries: async function () {
+
+  updateItemMenuEntries: async function (items = null) {
     const zoteroPane = $__gscc.app.getActivePane();
     const window = Zotero.getMainWindow();
-
+  
     if (!zoteroPane.canEditLibrary()) {
       const permissionAlertString = await window.document.l10n.formatValue(
         'gscc-lackPermissions',
@@ -380,7 +393,12 @@ $__gscc.app = {
       window.alert(permissionAlertString);
       return;
     }
-    await this.processItems(zoteroPane.getSelectedItems());
+  
+    if (!items) {
+      items = zoteroPane.getSelectedItems();
+    }
+  
+    await this.processItems(items);
   },
   updateGroup: async function () {
     const window = Zotero.getMainWindow();
