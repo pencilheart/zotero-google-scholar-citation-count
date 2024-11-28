@@ -291,6 +291,7 @@ $__gscc.app = {
       await Zotero.ItemTreeManager.registerColumns({
         dataKey: 'gsccCount',
         label: columnLabel,
+        flex:0.4,
         pluginID: 'justin@justinribeiro.com',
         dataProvider: (item, dataKey) => {
           const data = item.getField('extra');
