@@ -297,7 +297,7 @@ $__gscc.app = {
    * @param {String} extraString
    */
   setFieldFromExtra: function (extraString) {
-    let count = 0;
+    let count = '';
     if (extraString.startsWith(this.__extraEntryPrefix)) {
       try {
         const regex = new RegExp(
@@ -305,9 +305,11 @@ $__gscc.app = {
           'g',
         );
         // meh
-        const match = extraString.match(regex)[0];
-        const split = match.split(':')[1].trim();
-        count = parseInt(split);
+        const match = extraString.match(regex);
+        if (match){
+          const split = match[0].split(':')[1].trim();
+          count = parseInt(split);
+        }
       } catch {
         // dead case for weird behavior
       }
