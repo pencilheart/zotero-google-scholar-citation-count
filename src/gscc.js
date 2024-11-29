@@ -215,7 +215,7 @@ $__gscc.app = {
     useSearchTitleFuzzyMatch: false,
     useSearchAuthorsMatch: true,
     useDateRangeMatch: false,
-    mirrorurl:'https://scholar.lanfanshu.cn/',
+    mirrorurl:'https://scholar.google.com/',
   },
   /**
    * Initialize our world.
