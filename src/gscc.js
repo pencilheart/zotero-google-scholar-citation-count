@@ -434,6 +434,7 @@ $__gscc.app = {
         );
       } else {
         const response = await this.retrieveCitationData(item);
+        $__gscc.debugger.info(`ResponseText: ${response.responseText}`);
         await this.processCitationResponse(
           response.status,
           response.responseText,
@@ -636,7 +637,6 @@ $__gscc.app = {
       'extensions.zotero.gscc.mirrorurl',
       $__gscc.app.__preferenceDefaults.mirrorurl,
     );
-    $__gscc.debugger.info(`scholarurl: ${scholarurl}`);
     // const targetUrl = `${scholarurl}scholar?hl=en&q=${titleSearchString}&as_epq=&as_occt=title&num=1${paramAuthors}${paramYearRange}`;
     const targetUrl = `${scholarurl}scholar?hl=zh&q=${titleSearchString}&as_epq=&as_occt=title&num=1${paramAuthors}${paramYearRange}`;
     
