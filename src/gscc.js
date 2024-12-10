@@ -240,6 +240,10 @@ $__gscc.app = {
     notify: async function(event, type, ids, extraData) {
       if (event === 'add' && type === 'item') {
         const newItems = await Zotero.Items.getAsync(ids);
+        for (const item of newItems) {
+          item.setField('extra', '');
+          await item.saveTx(); 
+        }
         await $__gscc.app.updateItemMenuEntries(newItems);
       }
     }

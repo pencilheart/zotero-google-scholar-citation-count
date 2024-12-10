@@ -88,3 +88,4 @@ typings/
 build/
 builds/
 updates.json
+.DS_Store
