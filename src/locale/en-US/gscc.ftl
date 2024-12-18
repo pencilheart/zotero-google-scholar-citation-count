@@ -9,3 +9,5 @@ gscc-lackPermissions = You lack the permission to make edit to this library.
 gscc-unSupportedEntryType = Updating citations for this type of entry is not supported.
 gscc-unSupportedGroupCollection =
   .label = Updating a Group is not yet implemented.
+gscc-chemical =
+  .label = Formatting Title Chemical Formula
