@@ -13,3 +13,4 @@ preferences-gscc-useSearchAuthorsMatch = Usar parámetro de autores
 preferences-gscc-useSearchAuthorsMatch-explain = Cambia el comportamiento de búsqueda para agregar los nombres de los autores a los parámetros de búsqueda.
 preferences-gscc-useSearchAuthorsMatch-cb =
   .label = Usar parámetro de búsqueda por autores (por defecto: true)
+preferences-gscc-custom-titlename=Frases que no necesitan superíndices ni subíndices (ejemplo: Ti6Al4V,TC4)

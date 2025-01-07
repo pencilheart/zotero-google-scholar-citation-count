@@ -13,3 +13,4 @@ preferences-gscc-useSearchAuthorsMatch = Use Authors Param
 preferences-gscc-useSearchAuthorsMatch-explain = Changes the search behavior to add authors names to the search params.
 preferences-gscc-useSearchAuthorsMatch-cb =
   .label = Use Authors Search Param (default: true)
+preferences-gscc-custom-titlename=Phrases that no need superscripts and subscripts(examle: Ti6Al4V,TC4)

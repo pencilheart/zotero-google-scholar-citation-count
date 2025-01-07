@@ -13,5 +13,6 @@ preferences-gscc-useSearchAuthorsMatch = 著者パラメータを使用
 preferences-gscc-useSearchAuthorsMatch-explain = 検索パラメータに著者名を追加するように検索動作を変更します。
 preferences-gscc-useSearchAuthorsMatch-cb =
   .label = 著者検索パラメータを使用（デフォルト：true）
+preferences-gscc-custom-titlename=上付き文字、下付き文字を必要としない語句（例：Ti6Al4V、TC4）
 
 

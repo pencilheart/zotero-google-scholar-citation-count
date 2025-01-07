@@ -216,6 +216,7 @@ $__gscc.app = {
     useSearchAuthorsMatch: true,
     useDateRangeMatch: false,
     mirrorurl:'https://scholar.google.com/',
+    customtitlename:'',
   },
   /**
    * Initialize our world.
@@ -757,7 +758,21 @@ $__gscc.handlers = {
       "C3X",
       "CF6",
       "80C2",
+      "Ti6Al4V",
+      "5A06",
+      "T6",
+      "Al6Cu",
     ]; // 可以在这里添加更多的特殊字符
+
+    let newTermsRaw = Zotero.Prefs.get(
+      'extensions.zotero.gscc.customtitlename',
+      $__gscc.app.__preferenceDefaults.mirrorurl
+    );
+    let newTerms = newTermsRaw ? newTermsRaw.split(',') : [];
+    
+    specificTerms = specificTerms.concat(newTerms);
+    
+
     const specificTermsRegex = specificTerms.join("|");
 
     for (let item of items) {

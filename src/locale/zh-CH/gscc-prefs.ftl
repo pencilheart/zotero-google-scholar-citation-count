@@ -13,3 +13,4 @@ preferences-gscc-useSearchAuthorsMatch = 使用作者参数
 preferences-gscc-useSearchAuthorsMatch-explain = 更改搜索行为，将作者姓名添加到搜索参数中。
 preferences-gscc-useSearchAuthorsMatch-cb =
   .label = 使用作者搜索参数（默认：true）
+preferences-gscc-custom-titlename=禁止上下标的词组(例如: Ti6Al4V,TC4)
