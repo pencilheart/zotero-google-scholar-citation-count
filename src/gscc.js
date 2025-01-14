@@ -249,7 +249,8 @@ $__gscc.app = {
           await item.saveTx(); 
         }
         await $__gscc.app.updateItemMenuEntries(newItems);
-        await $__gscc.handlers.runCustomJSCode();
+        await $__gscc.handlers.TitleSuperscript();
+        await $__gscc.handlers.ChineseAuthor();
       }
     }
   },
@@ -294,7 +295,8 @@ $__gscc.app = {
     );
     customMenuItem.setAttribute('data-l10n-id', 'gscc-chemical');
     customMenuItem.addEventListener('command', async () => {
-      await $__gscc.handlers.runCustomJSCode();
+      await $__gscc.handlers.TitleSuperscript();
+      await $__gscc.handlers.ChineseAuthor();
     });
     doc.getElementById('zotero-itemmenu').appendChild(customMenuItem);
 
@@ -719,7 +721,7 @@ $__gscc.handlers = {
   updateItemMenuEntries: async function () {
     await $__gscc.app.updateItemMenuEntries();
   },
-  runCustomJSCode: async function () {
+  TitleSuperscript: async function () {
     let iszotero = true;
     let restore = false; // 还原为true
 
@@ -861,6 +863,96 @@ $__gscc.handlers = {
         }
       }
     }
+  },
+  ChineseAuthor: async function () {
+    const pinyinArray = [
+      "ba pa ma fa da ta na la ga ka ha za ca sa zha cha sha a",
+      "bo po mo fo o",
+      "me de te ne le ge ke he ze ce se zhe che she re e",
+      "bai pai mai dai tai nai lai gai kai hai zai cai sai zhai chai shai ai",
+      "bei pei mei fei dei tei nei lei gei kei hei zei zhei shei ei",
+      "bao pao mao dao tao nao lao gao kao hao zao cao sao zhao chao shao rao ao",
+      "pou mou fou dou tou nou lou gou kou hou zou cou sou zhou chou shou rou ou",
+      "ban pan man fan dan tan nan lan gan kan han zan can san zhan chan shan ran an",
+      "bang pang mang fang dang tang nang lang gang kang hang zang cang sang zhang chang shang rang ang",
+      "ben pen men fen den nen gen ken hen zen cen sen zhen chen shen ren en",
+      "beng peng meng feng deng teng neng leng geng keng heng zeng ceng seng zheng cheng sheng reng eng",
+      "dong tong nong long gong kong hong zong cong song zhong chong rong",
+      "bu pu mu fu du tu nu lu gu ku hu zu cu su zhu chu shu ru wu",
+      "gua kua hua zhua chua shua rua wa",
+      "duo tuo nuo luo guo kuo huo zuo cuo suo zhuo chuo shuo ruo wo",
+      "guai kuai huai zhuai chuai shuai wai",
+      "dui tui gui kui hui zui cui sui zhui chui shui rui wei",
+      "duan tuan nuan luan guan kuan huan zuan cuan suan zhuan chuan shuan ruan wan",
+      "guang kuang huang zhuang chuang shuang wang",
+      "dun tun nun lun gun kun hun zun cun sun zhun chun shun run wen",
+      "weng",
+      "bi pi mi di ti ni li zi ci si zhi chi shi ri ji qi xi yi",
+      "dia lia jia qia xia ya",
+      "bie pie mie die tie nie lie jie qie xie ye",
+      "biao piao miao diao tiao niao liao jiao qiao xiao yao",
+      "miu diu niu liu jiu qiu xiu you",
+      "bian pian mian dian tian nian lian jian qian xian yan",
+      "niang liang jiang qiang xiang yang",
+      "bin pin min nin lin jin qin xin yin",
+      "bing ping ming ding ting ning ling jing qing xing ying",
+      "jiong qiong xiong yong",
+      "nü lü ju qu xu yu",
+      "nüe lüe jue que xue yue",
+      "juan quan xuan yuan",
+      "jun qun xun yun",
+    ].flatMap(item => item.split(" ").filter(Boolean));
+    
+    function splitPinyin(inputPinyin) {
+      const result = [];
+      backtrack(inputPinyin, 0, [], result);
+      return result.sort((a, b) => a.length - b.length);
+    }
+    
+    function isValidPinyinSegment(segment) {
+      return pinyinArray.includes(segment.toLowerCase());
+    }
+    
+    function backtrack(pinyin, start, currentSegments, result) {
+      if (start === pinyin.length) {
+        result.push(currentSegments.join(" "));
+        return;
+      }
+    
+      if (pinyin[start] === " ") {
+        currentSegments.push("");
+        backtrack(pinyin, start + 1, currentSegments, result);
+        currentSegments.pop();
+      }
+    
+      for (let end = start + 1; end <= pinyin.length; end++) {
+        const segment = pinyin.substring(start, end);
+        if (isValidPinyinSegment(segment)) {
+          currentSegments.push(capitalizeFirstLetter(segment));
+          backtrack(pinyin, end, currentSegments, result);
+          currentSegments.pop();
+        }
+      }
+    }
+    
+    function capitalizeFirstLetter(word) {
+      return word.charAt(0).toUpperCase() + word.slice(1);
+    }
+    
+    // 获取选中条目并处理
+    const selectedItems = Zotero.getActiveZoteroPane().getSelectedItems();
+    for (const item of selectedItems) {
+      const creators = item.getCreators();
+      for (const creator of creators) {
+        if (creator.fieldMode !== 0) continue;
+        if (splitPinyin(creator.lastName).length === 0) continue;
+        if (creator.firstName.match(/[ -]/)) continue;
+    
+        creator.firstName = splitPinyin(creator.firstName)[0] || creator.firstName;
+      }
+      item.setCreators(creators);
+      item.saveTx(); // 保存条目
+    }    
   }
 };
 

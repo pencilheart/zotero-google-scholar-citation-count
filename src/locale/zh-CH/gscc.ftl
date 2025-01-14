@@ -10,4 +10,4 @@ gscc-unSupportedEntryType = 不支持更新此类型条目的引用。
 gscc-unSupportedGroupCollection =
   .label = 尚未实现对组的更新。
 gscc-chemical =
-  .label = 标题化学式上下标
+  .label = 标题化学式上下标 & 中文作者姓名
