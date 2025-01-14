@@ -1,8 +1,13 @@
 #!/bin/sh
 
-# set the version for our file
+# set the version for package.json
 # requires NPM 7.20+
 version=$(npm pkg get version | tr -d '"')
+
+# 更新 manifest.json package-lock.json 中的 version 字段
+jq --arg version "$version" '.version = $version' src/manifest.json | sponge src/manifest.json
+jq --arg version "$version" '.version = $version | .packages[""].version = $version' package-lock.json | sponge package-lock.json
+
 
 rm -rf build
 mkdir -p build
@@ -14,7 +19,7 @@ cd ..
 jq --arg version "$version" '.addons."justin@justinribeiro.com".updates.[0].version |= "\($version)"' updates.json | sponge updates.json
 
 # patch the update link
-updatelink="https://github.com/justinribeiro/zotero-google-scholar-citation-count/releases/download/v${version}/zotero-google-scholar-citation-count-${version}.xpi"
+updatelink="https://github.com/pencilheart/zotero-google-scholar-citation-count/releases/download/v${version}/zotero-google-scholar-citation-count-${version}.xpi"
 jq --arg updatelink "$updatelink" '.addons."justin@justinribeiro.com".updates.[0].update_link |= "\($updatelink)"' updates.json | sponge updates.json
 
 # patch the hash for the XPI

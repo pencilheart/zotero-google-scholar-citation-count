@@ -1,0 +1,19 @@
+{
+  "addons": {
+    "justin@justinribeiro.com": {
+      "updates": [
+        {
+          "version": "5.0.3",
+          "update_link": "https://github.com/pencilheart/zotero-google-scholar-citation-count/releases/download/v5.0.3/zotero-google-scholar-citation-count-5.0.3.xpi",
+          "update_hash": "sha256:cdd9bf22159069d870378df4a05a91ed4a6697792b64e0ef85b58200354c9689",
+          "applications": {
+            "zotero": {
+              "strict_min_version": "6.999",
+              "strict_max_version": "7.0.*"
+            }
+          }
+        }
+      ]
+    }
+  }
+}

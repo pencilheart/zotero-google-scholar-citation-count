@@ -87,7 +87,6 @@ typings/
 # Custom Misc
 build/
 builds/
-updates.json
 .DS_Store
 
 .codegpt
