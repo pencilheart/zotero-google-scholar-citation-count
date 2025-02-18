@@ -747,8 +747,6 @@ $__gscc.handlers = {
       "7YSZ",
       "F4",
       "DD6",
-      "TA2",
-      "TC4",
       "Ni20Cr",
       "AlSi50",
       "WC17",
@@ -760,10 +758,15 @@ $__gscc.handlers = {
       "C3X",
       "CF6",
       "80C2",
+      "TA2",
+      "TC4",
       "Ti6Al4V",
+      "TC17",
       "5A06",
       "T6",
       "Al6Cu",
+      "Ni20Cr",
+      "–8",
     ]; // 可以在这里添加更多的特殊字符
 
     let newTermsRaw = Zotero.Prefs.get(
