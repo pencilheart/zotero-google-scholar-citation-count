@@ -767,6 +767,8 @@ $__gscc.handlers = {
       "Al6Cu",
       "Ni20Cr",
       "–8",
+      "1:10",
+      "1:200",
     ]; // 可以在这里添加更多的特殊字符
 
     let newTermsRaw = Zotero.Prefs.get(
